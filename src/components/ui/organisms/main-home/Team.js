@@ -39,10 +39,17 @@ const Header = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #6c757d;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
+  color: #b31d15;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1rem;
   margin: 0;
+`;
+
+const SubTitle = styled.p`
+  color: #616161;
+  font-size: 1rem;
+  margin: 1rem 0;
 `;
 
 const Grid = styled.div`
