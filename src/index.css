@@ -1,27 +1,27 @@
 body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f3f3f3;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f3f3f3;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
 button {
-  outline: none;
-  border: none;
-  cursor: pointer;
-  border-radius: 0 !important;
-  text-transform: none !important;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 !important;
+    text-transform: none !important;
 }
 
 .bg-login {
-  background-image: url("./assets/bg-landing.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("./assets/bg-landing.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
