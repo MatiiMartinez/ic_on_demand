@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
 import {
+    AssessmentRounded,
     ChevronLeftRounded,
     ContactsRounded,
     ExitToAppRounded,
@@ -124,6 +125,16 @@ export default function AsideHome(props) {
                         />
                     </ListItemIcon>
                     <ListItemText primary="Contenido" />
+                </ListItem>
+                <ListItem button onClick={() => handleChangePage("analytics")}>
+                    <ListItemIcon>
+                        <AssessmentRounded
+                            color={
+                                page === "analytics" ? "secondary" : "inherit"
+                            }
+                        />
+                    </ListItemIcon>
+                    <ListItemText primary="Analítica" />
                 </ListItem>
             </List>
             <Divider />
