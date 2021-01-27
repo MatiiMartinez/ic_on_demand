@@ -4,26 +4,37 @@ import styled from "styled-components";
 import Button from "../atoms/Button";
 import { Avatar } from "@material-ui/core";
 import { AvatarGroup } from "@material-ui/lab";
+import { GroupOutlined } from "@material-ui/icons";
 
-export default function TeamCard() {
+export default function TeamCard(props) {
+    const { title, color } = props;
+
     return (
         <TeamCardContainer>
-            <h1>Marketing</h1>
-            <AvatarGroup max={5}>
-                <Avatar alt=""></Avatar>
-                <Avatar alt=""></Avatar>
-                <Avatar alt=""></Avatar>
-                <Avatar alt=""></Avatar>
-                <Avatar alt=""></Avatar>
-                <Avatar alt=""></Avatar>
-                <Avatar alt=""></Avatar>
-                <Avatar alt=""></Avatar>
-            </AvatarGroup>
-            <ButtonGroup>
-                <Button variant="contained" size="small" color="primary">
+            <Header color={color}>
+                <GroupOutlined fontSize="small" htmlColor="#ffffff" />
+                <Title>{title}</Title>
+            </Header>
+            <Body>
+                <AvatarGroup max={4}>
+                    <Avatar alt=""></Avatar>
+                    <Avatar alt=""></Avatar>
+                    <Avatar alt=""></Avatar>
+                    <Avatar alt=""></Avatar>
+                    <Avatar alt=""></Avatar>
+                    <Avatar alt=""></Avatar>
+                    <Avatar alt=""></Avatar>
+                    <Avatar alt=""></Avatar>
+                </AvatarGroup>
+                <Button
+                    variant="contained"
+                    size="small"
+                    color="primary"
+                    style={{ width: "100%" }}
+                >
                     Ir a Configuración
                 </Button>
-            </ButtonGroup>
+            </Body>
         </TeamCardContainer>
     );
 }
@@ -35,15 +46,27 @@ const TeamCardContainer = styled.div`
     flex-direction: column;
     row-gap: 2rem;
     border-radius: 0.25rem;
-    padding: 1rem 2rem;
-
-    h1 {
-        font-size: 1rem;
-        font-weight: 700;
-        margin: 0;
-    }
 `;
 
-const ButtonGroup = styled.div`
+const Header = styled.div`
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: ${(props) => props.color};
+    border-radius: 0.25rem 0.25rem 0 0;
+    padding: 1rem 1rem;
+`;
+
+const Title = styled.h2`
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+`;
+
+const Body = styled.div`
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 `;

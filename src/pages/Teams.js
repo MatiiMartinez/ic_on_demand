@@ -9,10 +9,10 @@ export default function Teams() {
     return (
         <TeamsContainer>
             <GridTeams>
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
+                <TeamCard title="Marketing" color="#e44e46" />
+                <TeamCard title="Diseño" color="#e44e46" />
+                <TeamCard title="Análisis" color="#e44e46" />
+                <TeamCard title="Gestión Comercial" color="#e44e46" />
                 <AddCard>
                     <AddCircleOutlined fontSize="large" htmlColor="#e5e5e5" />
                 </AddCard>
