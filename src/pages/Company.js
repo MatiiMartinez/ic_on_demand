@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import Logo from "../../../../assets/company.png";
+import Logo from "../assets/Bantrab.jpg";
 
-import InputDisabled from "../../../common/InputDisabled";
-import AdenButton from "../../../common/AdenButton";
-import FormCountries from "../../molecules/FormCountries";
-import TitleHeader from "../../atoms/TitleHeader";
+import InputDisabled from "../components/common/InputDisabled";
+import AdenButton from "../components/common/AdenButton";
+import FormCountries from "../components/ui/molecules/FormCountries";
+import TitleHeader from "../components/ui/atoms/TitleHeader";
 
 export default function Company() {
     return (
@@ -62,6 +62,6 @@ const LogoContainer = styled.div`
 
 const CompanyLogo = styled.img`
     border-radius: 25%;
-    max-width: 100px;
+    width: 100%;
     height: auto;
 `;

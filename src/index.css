@@ -19,6 +19,11 @@ button {
     text-transform: none !important;
 }
 
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
 .bg-login {
     background-image: url("./assets/bg-landing.png");
     background-position: center;

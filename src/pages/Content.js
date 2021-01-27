@@ -1,24 +1,33 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { contentMock } from "../../../../mocks/contentMock";
-import MenuContent from "../../molecules/MenuContent";
-import ContentCard from "../../molecules/ContentCard";
-import ContentCart from "../../molecules/ContentCart";
-import TitleHeader from "../../atoms/TitleHeader";
+import { contentMock } from "../mocks/contentMock";
+import MenuContent from "../components/ui/molecules/MenuContent";
+import ContentCard from "../components/ui/molecules/ContentCard";
+import ContentCart from "../components/ui/molecules/ContentCart";
+import ContentModal from "../components/ui/molecules/ContentModal";
 
 export default function Content() {
     const [menu, setMenu] = useState("");
+    const [isOpenModal, setIsOpenModal] = useState(false);
 
     function handleSetMenu(menu) {
         setMenu(menu);
     }
 
+    function handleOpenModal() {
+        setIsOpenModal(true);
+    }
+
+    function handleCloseModal() {
+        setIsOpenModal(false);
+    }
+
     return (
         <ContentContainer>
-            <TitleHeader
-                title="Contenido"
-                subtitle="Accede a nuestra red educativa internacional"
+            <ContentModal
+                isOpenModal={isOpenModal}
+                handleCloseModal={handleCloseModal}
             />
             <MenuContent
                 content={contentMock}
@@ -27,7 +36,11 @@ export default function Content() {
             />
             <DataContainer>
                 {contentMock[0].content.map((item, index) => (
-                    <ContentCard item={item} key={index} />
+                    <ContentCard
+                        item={item}
+                        key={index}
+                        handleOpenModal={handleOpenModal}
+                    />
                 ))}
             </DataContainer>
             <ContentCart content={contentMock} />

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import {
@@ -23,8 +23,9 @@ import {
     ListItemText,
     makeStyles,
 } from "@material-ui/core";
-import asideContext from "../../../context/asideContext/asideContext";
 import { Link } from "react-router-dom";
+
+import Logo from "../../../assets/Bantrab.jpg";
 
 const useStyles = makeStyles({
     drawerPaper: {
@@ -33,11 +34,7 @@ const useStyles = makeStyles({
 });
 
 export default function AsideHome(props) {
-    const asideContextState = useContext(asideContext);
-
-    const { openAside, handleCloseAside } = asideContextState;
-
-    const { page, handleChangePage } = props;
+    const { openAside, handleToggleAside } = props;
 
     const [account, setAccount] = useState(false);
 
@@ -58,7 +55,8 @@ export default function AsideHome(props) {
             }}
         >
             <DrawerHeader>
-                <IconButton onClick={handleCloseAside}>
+                <CompanyLogo src={Logo} alt="company" />
+                <IconButton onClick={handleToggleAside}>
                     <ChevronLeftRounded />
                 </IconButton>
             </DrawerHeader>
@@ -72,86 +70,70 @@ export default function AsideHome(props) {
                 </ListItem>
                 <Collapse in={account} timeout="auto" unmountOnExit>
                     <List>
-                        <ListItem
-                            button
-                            style={{
-                                paddingLeft: "3rem",
-                            }}
-                            onClick={() => handleChangePage("company")}
-                        >
-                            <ListItemIcon>
-                                <LocationCityRounded
-                                    color={
-                                        page === "company"
-                                            ? "secondary"
-                                            : "inherit"
-                                    }
-                                />
-                            </ListItemIcon>
-                            <ListItemText primary="Empresa" />
-                        </ListItem>
-                        <ListItem
-                            button
-                            style={{
-                                paddingLeft: "3rem",
-                            }}
-                            onClick={() => handleChangePage("admin")}
-                        >
-                            <ListItemIcon>
-                                <SupervisorAccountRounded
-                                    color={
-                                        page === "admin"
-                                            ? "secondary"
-                                            : "inherit"
-                                    }
-                                />
-                            </ListItemIcon>
-                            <ListItemText primary="Administrador" />
-                        </ListItem>
+                        <Link to="/company">
+                            <ListItem
+                                button
+                                style={{
+                                    paddingLeft: "3rem",
+                                }}
+                            >
+                                <ListItemIcon>
+                                    <LocationCityRounded />
+                                </ListItemIcon>
+                                <ListItemText primary="Empresa" />
+                            </ListItem>
+                        </Link>
+                        <Link to="/admin">
+                            <ListItem
+                                button
+                                style={{
+                                    paddingLeft: "3rem",
+                                }}
+                            >
+                                <ListItemIcon>
+                                    <SupervisorAccountRounded />
+                                </ListItemIcon>
+                                <ListItemText primary="Administrador" />
+                            </ListItem>
+                        </Link>
                     </List>
                 </Collapse>
-                <ListItem button onClick={() => handleChangePage("team")}>
-                    <ListItemIcon>
-                        <GroupRounded
-                            color={page === "team" ? "secondary" : "inherit"}
-                        />
-                    </ListItemIcon>
-                    <ListItemText primary="Equipo" />
-                </ListItem>
-                <ListItem button onClick={() => handleChangePage("content")}>
-                    <ListItemIcon>
-                        <TocRounded
-                            color={page === "content" ? "secondary" : "inherit"}
-                        />
-                    </ListItemIcon>
-                    <ListItemText primary="Contenido" />
-                </ListItem>
-                <ListItem button onClick={() => handleChangePage("analytics")}>
-                    <ListItemIcon>
-                        <AssessmentRounded
-                            color={
-                                page === "analytics" ? "secondary" : "inherit"
-                            }
-                        />
-                    </ListItemIcon>
-                    <ListItemText primary="Analítica" />
-                </ListItem>
+                <Link to="/teams">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <GroupRounded />
+                        </ListItemIcon>
+                        <ListItemText primary="Equipos" />
+                    </ListItem>
+                </Link>
+                <Link to="/content">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <TocRounded />
+                        </ListItemIcon>
+                        <ListItemText primary="Contenido" />
+                    </ListItem>
+                </Link>
+                <Link to="/analytics">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <AssessmentRounded />
+                        </ListItemIcon>
+                        <ListItemText primary="Analítica" />
+                    </ListItem>
+                </Link>
             </List>
             <Divider />
             <List>
-                <ListItem button>
-                    <ListItemIcon>
-                        <SettingsRounded />
-                    </ListItemIcon>
-                    <ListItemText primary="Configuracion" />
-                </ListItem>
-                <Link
-                    to="/"
-                    style={{
-                        textDecoration: "none",
-                        color: "#000000",
-                    }}
-                >
+                <Link to="/config">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <SettingsRounded />
+                        </ListItemIcon>
+                        <ListItemText primary="Configuracion" />
+                    </ListItem>
+                </Link>
+                <Link to="/">
                     <ListItem button>
                         <ListItemIcon>
                             <ExitToAppRounded />
@@ -167,5 +149,12 @@ export default function AsideHome(props) {
 const DrawerHeader = styled.div`
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding-left: 1rem;
+`;
+
+const CompanyLogo = styled.img`
+    border-radius: 25%;
+    width: auto;
+    height: 4rem;
 `;

@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import AnalyticFour from "../../../../mocks/analytics/AnalyticFour";
-import AnalyticOne from "../../../../mocks/analytics/AnalyticOne";
-import AnalyticThree from "../../../../mocks/analytics/AnalyticThree";
-import AnalyticTwo from "../../../../mocks/analytics/AnalyticTwo";
-import TitleHeader from "../../atoms/TitleHeader";
+import AnalyticFour from "../mocks/analytics/AnalyticFour";
+import AnalyticOne from "../mocks/analytics/AnalyticOne";
+import AnalyticThree from "../mocks/analytics/AnalyticThree";
+import AnalyticTwo from "../mocks/analytics/AnalyticTwo";
+import TitleHeader from "../components/ui/atoms/TitleHeader";
 
 const Analytics = () => {
     return (
