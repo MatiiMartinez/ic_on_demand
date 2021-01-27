@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Button as MatBtn } from "@material-ui/core";
 
 const Button = (props) => {
-    const { variant, handleClick, color, size } = props;
+    const { variant, handleClick, color, size, component } = props;
 
     return (
         <MatBtn
@@ -11,6 +11,7 @@ const Button = (props) => {
             onClick={handleClick}
             color={color}
             size={size}
+            component={component}
         >
             {props.children}
         </MatBtn>

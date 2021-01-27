@@ -21,7 +21,7 @@ export default function LoginForm() {
                 color="secondary"
                 style={{ backgroundColor: "#ffffff", borderRadius: "5px" }}
             />
-            <Link to="/home">
+            <Link to="/content">
                 <LoginButton>Ingresar</LoginButton>
             </Link>
             <ForgotPassword to="/">Forgot password?</ForgotPassword>

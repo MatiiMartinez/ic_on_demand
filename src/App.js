@@ -14,6 +14,7 @@ const Admin = lazy(() => import("./pages/Admin"));
 const Teams = lazy(() => import("./pages/Teams"));
 const Content = lazy(() => import("./pages/Content"));
 const Analytics = lazy(() => import("./pages/Analytics"));
+const Team = lazy(() => import("./components/templates/home/Team"));
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                         <Route exact path="/" component={Login} />
                         <Layout>
                             <Suspense fallback={<AdenLoading />}>
+                                {/** MAIN ROUTES */}
                                 <Route
                                     exact
                                     path="/company"
@@ -41,6 +43,8 @@ function App() {
                                     path="/analytics"
                                     component={Analytics}
                                 />
+                                {/** COMPONENT ROUTES */}
+                                <Route path="/teams/:id" component={Team} />
                             </Suspense>
                         </Layout>
                     </Switch>

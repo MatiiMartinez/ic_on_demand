@@ -49,5 +49,6 @@ const LayoutContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
+    position: relative;
     padding: 3rem;
 `;

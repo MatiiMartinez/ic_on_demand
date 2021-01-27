@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import Card from "../../molecules/Card";
-import New from "../../molecules/NewTeam";
+import Card from "../../ui/molecules/Card";
+import New from "../../ui/molecules/NewTeam";
 
-import { teamMock } from "../../../../mocks/teamMock";
-import { deleteItem } from "../../../../mocks/funciones";
+import { teamMock } from "../../../mocks/teamMock";
+import { deleteItem } from "../../../mocks/funciones";
 import { Divider } from "@material-ui/core";
 
 export default function Team() {
