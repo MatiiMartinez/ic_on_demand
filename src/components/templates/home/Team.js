@@ -5,7 +5,6 @@ import Card from "../../ui/molecules/Card";
 import New from "../../ui/molecules/NewTeam";
 
 import { teamMock } from "../../../mocks/teamMock";
-import { deleteItem } from "../../../mocks/funciones";
 import { Divider } from "@material-ui/core";
 
 export default function Team() {
@@ -24,7 +23,7 @@ export default function Team() {
                 </HeaderGrid>
                 <Divider />
                 {teamMock.map((item, index) => (
-                    <Card item={item} key={index} deleteItem={deleteItem} />
+                    <Card item={item} key={index} />
                 ))}
             </Grid>
         </div>
@@ -49,7 +48,7 @@ const Title = styled.h1`
 const Grid = styled.div`
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 0.5rem;
 `;
 
 const HeaderGrid = styled.span`
