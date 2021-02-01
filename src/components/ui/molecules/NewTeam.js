@@ -1,65 +1,70 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import AdenButton from "../../common/AdenButton";
-
-import { TextField } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import FormModal from "../../common/FormModal";
 
 const NewTeam = () => {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-  function handleOpen() {
-    setIsOpen(true);
-  }
+    function handleOpen() {
+        setIsOpen(true);
+    }
 
-  function handleClose() {
-    setIsOpen(false);
-  }
+    function handleClose() {
+        setIsOpen(false);
+    }
 
-  return (
-    <>
-      <AdenButton onClick={handleOpen}>Agregar</AdenButton>
-      <FormModal
-        isOpen={isOpen}
-        handleClose={handleClose}
-        title="Agregar usuario"
-      >
-        <Body>
-          <TextField
-            label="Email"
-            size="small"
-            variant="outlined"
-            color="secondary"
-            type="password"
-          />
-          <ButtonContainer>
-            <AdenButton outlined={true} onClick={handleClose}>
-              Cancelar
-            </AdenButton>
-            <AdenButton>Guardar</AdenButton>
-          </ButtonContainer>
-        </Body>
-      </FormModal>
-    </>
-  );
+    return (
+        <>
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={handleOpen}
+                style={{ marginLeft: "auto" }}
+            >
+                Agregar
+            </Button>
+            <FormModal
+                isOpen={isOpen}
+                handleClose={handleClose}
+                title="Agregar usuario"
+            >
+                <Body>
+                    <TextField
+                        label="Email"
+                        size="small"
+                        variant="outlined"
+                        color="secondary"
+                        type="password"
+                    />
+                    <ButtonContainer>
+                        <Button outlined={true} onClick={handleClose}>
+                            Cancelar
+                        </Button>
+                        <Button>Guardar</Button>
+                    </ButtonContainer>
+                </Body>
+            </FormModal>
+        </>
+    );
 };
 
 export default NewTeam;
 
 const Body = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-  padding: 1rem 20%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding: 1rem 20%;
 `;
 
 const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  column-gap: 1rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
 
-  button {
-    width: 100%;
-  }
+    button {
+        width: 100%;
+    }
 `;

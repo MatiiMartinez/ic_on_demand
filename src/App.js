@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { ThemeProvider } from "@material-ui/core";
@@ -9,12 +9,12 @@ import AdenLoading from "./components/common/AdenLoading";
 // PAGES
 import Login from "./pages/Login";
 import Layout from "./components/layout/Layout";
-const Company = lazy(() => import("./pages/Company"));
-const Admin = lazy(() => import("./pages/Admin"));
-const Teams = lazy(() => import("./pages/Teams"));
-const Content = lazy(() => import("./pages/Content"));
-const Analytics = lazy(() => import("./pages/Analytics"));
-const Team = lazy(() => import("./components/templates/home/Team"));
+import Company from "./pages/Company";
+import Admin from "./pages/Admin";
+import Teams from "./pages/Teams";
+import Content from "./pages/Content";
+import Analytics from "./pages/Analytics";
+import Team from "./components/templates/home/Team";
 
 function App() {
     return (
@@ -44,7 +44,11 @@ function App() {
                                     component={Analytics}
                                 />
                                 {/** COMPONENT ROUTES */}
-                                <Route path="/teams/:id" component={Team} />
+                                <Route
+                                    exact
+                                    path="/teams/:id"
+                                    component={Team}
+                                />
                             </Suspense>
                         </Layout>
                     </Switch>

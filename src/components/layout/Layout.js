@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { AppBar, IconButton, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, IconButton, Toolbar } from "@material-ui/core";
 import { MenuRounded } from "@material-ui/icons";
 
 // COMPONENTS
 import AsideHome from "../templates/home/AsideHome";
+import BreadCrumbs from "../../utils/BreadCrumbs";
 
 export default function Layout(props) {
     const [openAside, setOpenAside] = useState(true);
@@ -33,9 +34,7 @@ export default function Layout(props) {
                         >
                             <MenuRounded htmlColor="#ffffff" />
                         </IconButton>
-                        <Typography variant="h6" noWrap>
-                            Sebastian Maidana
-                        </Typography>
+                        <BreadCrumbs />
                     </Toolbar>
                 </AppBar>
                 <MainContainer>{props.children}</MainContainer>

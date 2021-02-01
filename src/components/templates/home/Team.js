@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Card from "../../ui/molecules/Card";
 import New from "../../ui/molecules/NewTeam";
 
 import { teamMock } from "../../../mocks/teamMock";
-import { Divider } from "@material-ui/core";
+import { Button, Divider } from "@material-ui/core";
+import { ForwardRounded, ReplyRounded } from "@material-ui/icons";
 
 export default function Team() {
+    const [isFirst, setIsFirst] = useState(true);
+
+    function toggleIsFirst() {
+        setIsFirst(!isFirst);
+    }
+
     return (
         <div>
             <Header>
                 <Title>Equipo</Title>
+                <Button
+                    onClick={toggleIsFirst}
+                    endIcon={isFirst ? <ForwardRounded /> : <ReplyRounded />}
+                >
+                    {isFirst ? "Ir a Cursos" : "Volver"}
+                </Button>
                 <New />
             </Header>
             <Grid>
@@ -32,7 +45,6 @@ export default function Team() {
 
 const Header = styled.div`
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
 `;
