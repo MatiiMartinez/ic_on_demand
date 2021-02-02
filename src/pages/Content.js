@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { contentMock } from "../mocks/contentMock";
 import MenuContent from "../components/ui/molecules/MenuContent";
 import ContentCard from "../components/ui/molecules/content/ContentCard";
-import ContentCart from "../components/ui/molecules/content/ContentCart";
+import ContentCart from "../components/ui/organisms/content/ContentCart";
 
 export default function Content() {
     const [menu, setMenu] = useState("");
@@ -25,7 +25,7 @@ export default function Content() {
                     <ContentCard item={item} key={index} />
                 ))}
             </DataContainer>
-            <ContentCart content={contentMock} />
+            <ContentCart />
         </ContentContainer>
     );
 }

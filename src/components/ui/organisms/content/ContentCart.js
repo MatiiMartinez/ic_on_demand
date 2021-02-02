@@ -3,12 +3,10 @@ import styled from "styled-components";
 
 import { Badge, Collapse, IconButton } from "@material-ui/core";
 import { ShoppingCartRounded } from "@material-ui/icons";
+import LeftCart from "../../molecules/content/LeftCart";
+import RightCart from "../../molecules/content/RightCart";
 
-import CartContainer from "./CartContainer";
-
-const ContentCart = (props) => {
-    const { content } = props;
-
+const ContentCart = () => {
     const [cartOpen, setCartOpen] = useState(false);
 
     function handleSetCartOpen() {
@@ -23,7 +21,14 @@ const ContentCart = (props) => {
                 </Badge>
             </CartIcon>
             <Collapse in={cartOpen} timeout="auto" unmountOnExit>
-                <CartContainer items={content[0].content[0].content} />
+                <CartContainer>
+                    <Column>
+                        <LeftCart />
+                    </Column>
+                    <Column>
+                        <RightCart />
+                    </Column>
+                </CartContainer>
             </Collapse>
         </ContentCartContainer>
     );
@@ -38,11 +43,24 @@ const ContentCartContainer = styled.div`
     right: 0;
     background-color: #ffffff;
     border-top: 1px solid rgba(0, 0, 0, 0.12);
-    z-index: 9999;
 `;
 
 const CartIcon = styled(IconButton)`
     position: absolute !important;
     right: 1rem !important;
     top: -4rem !important;
+`;
+
+const CartContainer = styled.div`
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    padding: 2rem;
+    column-gap: 2rem;
+    background-color: #f3f6f9;
+`;
+
+const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
 `;

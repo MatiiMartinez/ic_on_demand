@@ -30,6 +30,7 @@ import Logo from "../../../assets/Bantrab.jpg";
 const useStyles = makeStyles({
     drawerPaper: {
         width: "20%",
+        zIndex: "-1",
     },
 });
 
