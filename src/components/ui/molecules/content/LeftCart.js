@@ -80,6 +80,9 @@ const LeftCart = (props) => {
                         />
                     )}
                 </OptionsRow>
+                <Button variant="contained" color="primary" size="medium">
+                    Siguiente
+                </Button>
             </OptionsContainer>
         </>
     );
