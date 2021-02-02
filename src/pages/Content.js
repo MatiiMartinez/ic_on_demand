@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 import { contentMock } from "../mocks/contentMock";
 import MenuContent from "../components/ui/molecules/MenuContent";
-import ContentCard from "../components/ui/molecules/ContentCard";
-import ContentCart from "../components/ui/molecules/ContentCart";
+import ContentCard from "../components/ui/molecules/content/ContentCard";
+import ContentCart from "../components/ui/molecules/content/ContentCart";
 
 export default function Content() {
     const [menu, setMenu] = useState("");

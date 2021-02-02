@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Button from "../atoms/Button";
+import Button from "../../atoms/Button";
 
 const ContentCard = (props) => {
     const { item } = props;

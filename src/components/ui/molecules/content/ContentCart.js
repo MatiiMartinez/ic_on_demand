@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Badge, Collapse, IconButton } from "@material-ui/core";
-import { MenuBookRounded } from "@material-ui/icons";
+import { ShoppingCartRounded } from "@material-ui/icons";
 
 import CartContainer from "./CartContainer";
 
@@ -19,7 +19,7 @@ const ContentCart = (props) => {
         <ContentCartContainer>
             <CartIcon onClick={handleSetCartOpen}>
                 <Badge color="primary" badgeContent={3}>
-                    <MenuBookRounded />
+                    <ShoppingCartRounded />
                 </Badge>
             </CartIcon>
             <Collapse in={cartOpen} timeout="auto" unmountOnExit>
@@ -34,10 +34,11 @@ export default ContentCart;
 const ContentCartContainer = styled.div`
     position: fixed;
     bottom: 0;
-    left: 20%;
+    left: 0;
     right: 0;
     background-color: #ffffff;
     border-top: 1px solid rgba(0, 0, 0, 0.12);
+    z-index: 9999;
 `;
 
 const CartIcon = styled(IconButton)`
