@@ -40,14 +40,14 @@ export default function TableTeams() {
                 <TableBody>
                     {teamMock.map((team, index) => (
                         <TableRowStyle
-                            onClick={() => history.push(`/teams/${team.id}`)}
+                            onClick={() => history.push(`/teams/${team.name}`)}
                             key={index}
                         >
                             <TableCell>{team.name}</TableCell>
                             <TableCell>
                                 <AvatarGroup max={3}>
                                     {team.team.map((user, index) => (
-                                        <Avatar alt={user} key={index} />
+                                        <Avatar alt={user.email} key={index} />
                                     ))}
                                 </AvatarGroup>
                             </TableCell>

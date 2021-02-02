@@ -4,13 +4,16 @@ import styled from "styled-components";
 import Button from "../atoms/Button";
 
 const ContentCard = (props) => {
-    const { item, handleOpenModal } = props;
+    const { item } = props;
 
     console.log(item);
 
     return (
         <ContentCardContainer>
-            <Title>{item.title}</Title>
+            <TitleContainer>
+                <Title>{item.title}</Title>
+                <Description>{item.description}</Description>
+            </TitleContainer>
             <Grid>
                 {item.content.map((item, index) => (
                     <MiniCard key={index}>
@@ -18,6 +21,9 @@ const ContentCard = (props) => {
                         <MiniCardImage src={item.image} alt="" />
                         <MiniCardBody>
                             <MiniCardTitle>{item.title}</MiniCardTitle>
+                            <MiniCardDescription>
+                                {item.description}
+                            </MiniCardDescription>
                             <MiniCardFooter>
                                 <MiniCardAutor>
                                     Por <span>Leandro Suárez</span>
@@ -26,9 +32,8 @@ const ContentCard = (props) => {
                                     variant="contained"
                                     size="small"
                                     color="primary"
-                                    handleClick={handleOpenModal}
                                 >
-                                    Mas Información
+                                    Agregar curso
                                 </Button>
                             </MiniCardFooter>
                         </MiniCardBody>
@@ -41,6 +46,42 @@ const ContentCard = (props) => {
 
 const ContentCardContainer = styled.div`
     height: max-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+`;
+
+const TitleContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #b31d1515;
+`;
+
+const Title = styled.h1`
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 0;
+`;
+
+const Description = styled.p`
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0;
+`;
+
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+`;
+
+const MiniCard = styled.div`
+    position: relative;
+    display: grid;
+    grid-template-rows: 4fr 6fr;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px #00000020;
 `;
 
 const Category = styled.span`
@@ -55,29 +96,6 @@ const Category = styled.span`
     padding: 0.25rem 0.5rem;
 `;
 
-const Title = styled.h2`
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 3rem 0;
-    text-transform: capitalize;
-`;
-
-const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 2rem;
-`;
-
-const MiniCard = styled.div`
-    position: relative;
-    display: grid;
-    grid-template-rows: 5fr 5fr;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px #00000020;
-    height: 300px;
-    grid-column: span 4;
-`;
-
 const MiniCardImage = styled.div`
     background-size: cover;
     background-image: url(${(props) => props.src});
@@ -90,6 +108,7 @@ const MiniCardBody = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
+    row-gap: 1rem;
 `;
 
 const MiniCardTitle = styled.h2`
@@ -97,6 +116,12 @@ const MiniCardTitle = styled.h2`
     text-transform: capitalize;
     margin: 0;
     color: #cd1f17;
+`;
+
+const MiniCardDescription = styled.p`
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin: 0;
 `;
 
 const MiniCardFooter = styled.div`

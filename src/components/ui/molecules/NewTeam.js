@@ -36,7 +36,7 @@ const NewTeam = () => {
                         size="small"
                         variant="outlined"
                         color="secondary"
-                        type="password"
+                        type="email"
                     />
                     <ButtonContainer>
                         <Button outlined={true} onClick={handleClose}>

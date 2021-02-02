@@ -5,30 +5,16 @@ import { contentMock } from "../mocks/contentMock";
 import MenuContent from "../components/ui/molecules/MenuContent";
 import ContentCard from "../components/ui/molecules/ContentCard";
 import ContentCart from "../components/ui/molecules/ContentCart";
-import ContentModal from "../components/ui/molecules/ContentModal";
 
 export default function Content() {
     const [menu, setMenu] = useState("");
-    const [isOpenModal, setIsOpenModal] = useState(false);
 
     function handleSetMenu(menu) {
         setMenu(menu);
     }
 
-    function handleOpenModal() {
-        setIsOpenModal(true);
-    }
-
-    function handleCloseModal() {
-        setIsOpenModal(false);
-    }
-
     return (
         <ContentContainer>
-            <ContentModal
-                isOpenModal={isOpenModal}
-                handleCloseModal={handleCloseModal}
-            />
             <MenuContent
                 content={contentMock}
                 menu={menu}
@@ -36,11 +22,7 @@ export default function Content() {
             />
             <DataContainer>
                 {contentMock[0].content.map((item, index) => (
-                    <ContentCard
-                        item={item}
-                        key={index}
-                        handleOpenModal={handleOpenModal}
-                    />
+                    <ContentCard item={item} key={index} />
                 ))}
             </DataContainer>
             <ContentCart content={contentMock} />

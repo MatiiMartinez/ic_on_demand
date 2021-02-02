@@ -4,7 +4,7 @@ import { Button, TextField } from "@material-ui/core";
 import ModalForm from "../../../common/ModalForm";
 import styled from "styled-components";
 
-export default function NewUser() {
+export default function NewTeam() {
     const [isOpen, setIsOpen] = useState(false);
 
     function handleOpen() {
@@ -23,32 +23,27 @@ export default function NewUser() {
                 size="small"
                 onClick={handleOpen}
             >
-                NUEVO USUARIO
+                NUEVO EQUIPO
             </Button>
             <ModalForm
                 isOpen={isOpen}
                 handleClose={handleClose}
-                title="Crear usuario"
+                title="Crear equipo"
             >
-                <NewUserContainer>
+                <NewTeamContainer>
                     <TextField
-                        label="Correo electrónico"
+                        label="Nombre"
                         size="small"
                         variant="outlined"
                         color="primary"
                         type="email"
                     />
-                    <Button variant="contained" color="secondary" size="medium">
-                        Verificar
-                    </Button>
-                </NewUserContainer>
+                </NewTeamContainer>
             </ModalForm>
         </>
     );
 }
 
-const NewUserContainer = styled.div`
+const NewTeamContainer = styled.div`
     display: flex;
-    align-items: center;
-    column-gap: 1rem;
 `;
