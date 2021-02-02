@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { Button, TextField } from "@material-ui/core";
+import { Button, Chip, TextField } from "@material-ui/core";
 import { GroupRounded, PersonRounded } from "@material-ui/icons";
 import { Autocomplete } from "@material-ui/lab";
 
@@ -14,6 +14,7 @@ const LeftCart = (props) => {
     const { items } = props;
 
     const [typeCheck, setTypeCheck] = useState(true);
+    const [persons, setPersons] = useState([]);
 
     function setPerson() {
         setTypeCheck(true);
@@ -21,6 +22,15 @@ const LeftCart = (props) => {
 
     function setGroup() {
         setTypeCheck(false);
+    }
+
+    function addPerson(e, newValue) {
+        setPersons([...persons, newValue]);
+    }
+
+    function deletePerson(email) {
+        const newList = persons.filter((x) => x.email !== email);
+        setPersons(newList);
     }
 
     return (
@@ -52,6 +62,8 @@ const LeftCart = (props) => {
                 <OptionsRow>
                     {typeCheck ? (
                         <Autocomplete
+                            onChange={addPerson}
+                            disableClearable
                             options={personMock}
                             getOptionLabel={(option) => option.email}
                             style={{ width: "100%" }}
@@ -80,6 +92,18 @@ const LeftCart = (props) => {
                         />
                     )}
                 </OptionsRow>
+                <div>
+                    {typeCheck
+                        ? persons.length !== 0 &&
+                          persons.map((person, index) => (
+                              <Chip
+                                  label={person.email}
+                                  key={index}
+                                  onDelete={() => deletePerson(person.email)}
+                              />
+                          ))
+                        : ""}
+                </div>
                 <Button variant="contained" color="primary" size="medium">
                     Siguiente
                 </Button>

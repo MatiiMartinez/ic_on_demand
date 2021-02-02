@@ -9,66 +9,34 @@ const ContentCard = (props) => {
     console.log(item);
 
     return (
-        <ContentCardContainer>
-            <TitleContainer>
-                <Title>{item.title}</Title>
-                <Description>{item.description}</Description>
-            </TitleContainer>
-            <Grid>
-                {item.content.map((item, index) => (
-                    <MiniCard key={index}>
-                        <Category>Marketing</Category>
-                        <MiniCardImage src={item.image} alt="" />
-                        <MiniCardBody>
-                            <MiniCardTitle>{item.title}</MiniCardTitle>
-                            <MiniCardDescription>
-                                {item.description}
-                            </MiniCardDescription>
-                            <MiniCardFooter>
-                                <MiniCardAutor>
-                                    Por <span>Leandro Suárez</span>
-                                </MiniCardAutor>
-                                <Button
-                                    variant="contained"
-                                    size="small"
-                                    color="primary"
-                                >
-                                    Agregar curso
-                                </Button>
-                            </MiniCardFooter>
-                        </MiniCardBody>
-                    </MiniCard>
-                ))}
-            </Grid>
-        </ContentCardContainer>
+        <Grid>
+            {item.content.map((item, index) => (
+                <MiniCard key={index}>
+                    <Category>Marketing</Category>
+                    <MiniCardImage src={item.image} alt="" />
+                    <MiniCardBody>
+                        <MiniCardTitle>{item.title}</MiniCardTitle>
+                        <MiniCardDescription>
+                            {item.description}
+                        </MiniCardDescription>
+                        <MiniCardFooter>
+                            <MiniCardAutor>
+                                Por <span>Leandro Suárez</span>
+                            </MiniCardAutor>
+                            <Button
+                                variant="contained"
+                                size="small"
+                                color="primary"
+                            >
+                                Agregar curso
+                            </Button>
+                        </MiniCardFooter>
+                    </MiniCardBody>
+                </MiniCard>
+            ))}
+        </Grid>
     );
 };
-
-const ContentCardContainer = styled.div`
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-`;
-
-const TitleContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    background-color: #b31d1515;
-`;
-
-const Title = styled.h1`
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin: 0;
-`;
-
-const Description = styled.p`
-    font-size: 1rem;
-    font-weight: 300;
-    margin: 0;
-`;
 
 const Grid = styled.div`
     display: grid;
