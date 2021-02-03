@@ -37,6 +37,7 @@ const OptionsContainer = styled.div`
     row-gap: 1rem;
     background-color: #ffffff;
     border-radius: 8px;
+    height: 100%;
 `;
 
 const Subtitle = styled.h2`

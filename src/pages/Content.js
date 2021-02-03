@@ -20,11 +20,14 @@ export default function Content() {
                 menu={menu}
                 handleSetMenu={handleSetMenu}
             />
-            <DataContainer>
-                {contentMock[0].content.map((item, index) => (
+            <Grid>
+                {contentMock[0].content[0].content.map((item, index) => (
                     <ContentCard item={item} key={index} />
                 ))}
-            </DataContainer>
+                {contentMock[0].content[1].content.map((item, index) => (
+                    <ContentCard item={item} key={index} />
+                ))}
+            </Grid>
             <ContentCart />
         </ContentContainer>
     );
@@ -34,8 +37,8 @@ const ContentContainer = styled.div`
     position: relative;
 `;
 
-const DataContainer = styled.div`
+const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
 `;

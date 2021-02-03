@@ -1,48 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
+import { makeStyles, Popover } from "@material-ui/core";
 import Button from "../../atoms/Button";
+
+const useStyles = makeStyles(() => ({
+    popover: {
+        pointerEvents: "none",
+    },
+    paper: {
+        boxShadow: "none",
+        border: "1px solid #dcdacb",
+        padding: "1rem",
+        maxWidth: "300px",
+        display: "flex",
+        flexDirection: "column",
+        rowGap: ".5rem",
+    },
+}));
 
 const ContentCard = (props) => {
     const { item } = props;
+    const classes = useStyles();
 
-    console.log(item);
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    function handlePopoverOpen(e) {
+        setAnchorEl(e.currentTarget);
+    }
+
+    function handlePopoverClose() {
+        setAnchorEl(null);
+    }
+
+    const isOpen = Boolean(anchorEl);
 
     return (
-        <Grid>
-            {item.content.map((item, index) => (
-                <MiniCard key={index}>
-                    <Category>Marketing</Category>
-                    <MiniCardImage src={item.image} alt="" />
-                    <MiniCardBody>
-                        <MiniCardTitle>{item.title}</MiniCardTitle>
-                        <MiniCardDescription>
-                            {item.description}
-                        </MiniCardDescription>
-                        <MiniCardFooter>
-                            <MiniCardAutor>
-                                Por <span>Leandro Suárez</span>
-                            </MiniCardAutor>
-                            <Button
-                                variant="contained"
-                                size="small"
-                                color="primary"
-                            >
-                                Agregar curso
-                            </Button>
-                        </MiniCardFooter>
-                    </MiniCardBody>
-                </MiniCard>
-            ))}
-        </Grid>
+        <>
+            <MiniCard
+                aria-owns={isOpen ? "mouse-over-popover" : undefined}
+                aria-haspopup="true"
+                onMouseEnter={handlePopoverOpen}
+                onMouseLeave={handlePopoverClose}
+            >
+                <Category>Marketing</Category>
+                <MiniCardImage src={item.image} alt="" />
+                <MiniCardBody>
+                    <MiniCardTitle>{item.title}</MiniCardTitle>
+                    <MiniCardDescription>
+                        {item.description}
+                    </MiniCardDescription>
+                    <MiniCardFooter>
+                        <MiniCardAutor>
+                            Por <span>Leandro Suárez</span>
+                        </MiniCardAutor>
+                        <Button
+                            variant="contained"
+                            size="small"
+                            color="primary"
+                        >
+                            Agregar curso
+                        </Button>
+                    </MiniCardFooter>
+                </MiniCardBody>
+            </MiniCard>
+            <Popover
+                id="mouse-over-popover"
+                className={classes.popover}
+                classes={{
+                    paper: classes.paper,
+                }}
+                open={isOpen}
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                    vertical: "center",
+                    horizontal: "right",
+                }}
+                transformOrigin={{
+                    vertical: "center",
+                    horizontal: "left",
+                }}
+                onClose={handlePopoverClose}
+                disableRestoreFocus
+                container={anchorEl}
+            >
+                <PopoverTitle>{item.title}</PopoverTitle>
+                <PopoverSubtitle>
+                    2 horas &middot; Material &middot; Multimedia
+                </PopoverSubtitle>
+                <MiniCardDescription>{item.description}</MiniCardDescription>
+            </Popover>
+        </>
     );
 };
-
-const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 2rem;
-`;
 
 const MiniCard = styled.div`
     position: relative;
@@ -105,6 +155,21 @@ const MiniCardAutor = styled.p`
     span {
         color: #cd1f17;
     }
+`;
+
+// POPOVER
+const PopoverTitle = styled.h1`
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: capitalize;
+    margin: 0;
+`;
+
+const PopoverSubtitle = styled.span`
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin: 0;
+    color: #28a745;
 `;
 
 export default ContentCard;

@@ -14,18 +14,33 @@ const LeftCart = (props) => {
     const { items } = props;
 
     const [typeCheck, setTypeCheck] = useState(true);
+    const [personValue, setPersonValue] = useState(null);
     const [persons, setPersons] = useState([]);
+    const [groupValue, setGroupValue] = useState(null);
+    const [groups, setGroups] = useState([]);
 
-    function setPerson() {
+    function setTypePerson() {
         setTypeCheck(true);
     }
 
-    function setGroup() {
+    function setTypeGroup() {
         setTypeCheck(false);
     }
 
-    function addPerson(e, newValue) {
-        setPersons([...persons, newValue]);
+    function handleChangePerson(e, newValue) {
+        setPersonValue(newValue);
+    }
+
+    function handleChangeGroup(e, newValue) {
+        setGroupValue(newValue);
+    }
+
+    function addPerson() {
+        setPersons([...persons, personValue]);
+    }
+
+    function addGroup() {
+        setGroups([...groups, groupValue]);
     }
 
     function deletePerson(email) {
@@ -33,9 +48,14 @@ const LeftCart = (props) => {
         setPersons(newList);
     }
 
+    function deleteGroup(name) {
+        const newList = groups.filter((x) => x.name !== name);
+        setGroups(newList);
+    }
+
     return (
         <>
-            <TitleInfo label="Payment Information" />
+            <TitleInfo label="Payment Information" group />
             <OptionsContainer>
                 {/** User type */}
                 <Subtitle>Tipo Usuario</Subtitle>
@@ -43,7 +63,7 @@ const LeftCart = (props) => {
                     <Button
                         variant="outlined"
                         color={`${typeCheck ? "primary" : "secondary"}`}
-                        onClick={setPerson}
+                        onClick={setTypePerson}
                         startIcon={<PersonRounded />}
                     >
                         Personas
@@ -51,7 +71,7 @@ const LeftCart = (props) => {
                     <Button
                         variant="outlined"
                         color={`${!typeCheck ? "primary" : "secondary"}`}
-                        onClick={setGroup}
+                        onClick={setTypeGroup}
                         startIcon={<GroupRounded />}
                     >
                         Grupo
@@ -61,35 +81,57 @@ const LeftCart = (props) => {
                 <Subtitle>{typeCheck ? "Personas" : "Grupo"}</Subtitle>
                 <OptionsRow>
                     {typeCheck ? (
-                        <Autocomplete
-                            onChange={addPerson}
-                            disableClearable
-                            options={personMock}
-                            getOptionLabel={(option) => option.email}
-                            style={{ width: "100%" }}
-                            renderInput={(params) => (
-                                <TextField
-                                    {...params}
-                                    label="Persona"
-                                    variant="outlined"
-                                    size="small"
-                                />
-                            )}
-                        />
+                        <>
+                            <Autocomplete
+                                onChange={handleChangePerson}
+                                disableClearable
+                                options={personMock}
+                                getOptionLabel={(option) => option.email}
+                                style={{ width: "100%" }}
+                                renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        label="Persona"
+                                        variant="outlined"
+                                        size="small"
+                                    />
+                                )}
+                            />
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                size="small"
+                                onClick={addPerson}
+                            >
+                                Agregar
+                            </Button>
+                        </>
                     ) : (
-                        <Autocomplete
-                            options={groupMock}
-                            getOptionLabel={(option) => option.name}
-                            style={{ width: "100%" }}
-                            renderInput={(params) => (
-                                <TextField
-                                    {...params}
-                                    label="Grupo"
-                                    variant="outlined"
-                                    size="small"
-                                />
-                            )}
-                        />
+                        <>
+                            <Autocomplete
+                                onChange={handleChangeGroup}
+                                disableClearable
+                                options={groupMock}
+                                getOptionLabel={(option) => option.name}
+                                style={{ width: "100%" }}
+                                renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        label="Grupo"
+                                        variant="outlined"
+                                        size="small"
+                                    />
+                                )}
+                            />
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                size="small"
+                                onClick={addGroup}
+                            >
+                                Agregar
+                            </Button>
+                        </>
                     )}
                 </OptionsRow>
                 <div>
@@ -102,7 +144,14 @@ const LeftCart = (props) => {
                                   onDelete={() => deletePerson(person.email)}
                               />
                           ))
-                        : ""}
+                        : groups.length !== 0 &&
+                          groups.map((group, index) => (
+                              <Chip
+                                  label={group.name}
+                                  key={index}
+                                  onDelete={() => deleteGroup(group.name)}
+                              />
+                          ))}
                 </div>
                 <Button variant="contained" color="primary" size="medium">
                     Siguiente

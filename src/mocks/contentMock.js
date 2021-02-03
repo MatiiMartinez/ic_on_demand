@@ -54,6 +54,14 @@ export const contentMock = [
                         time: "1 semana",
                         image: "https://picsum.photos/id/3/800/600",
                     },
+                    {
+                        title:
+                            "Inteligencias múltiples, para un mundo dinámico, complejo y ambiguo",
+                        description:
+                            "Aprende a armar tu propio plan de marketing digital, a definir tu estrategia digital y a gestionar las herrramientas a implementar para que el mismo sea exitoso.",
+                        time: "1 semana",
+                        image: "https://picsum.photos/id/2/800/600",
+                    },
                 ],
             },
             {
