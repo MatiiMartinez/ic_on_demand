@@ -7,6 +7,7 @@ import {
     ContactsRounded,
     ExitToAppRounded,
     GroupRounded,
+    HelpOutlineOutlined,
     LocationCityRounded,
     SettingsRounded,
     SupervisorAccountRounded,
@@ -22,6 +23,7 @@ import {
     ListItemIcon,
     ListItemText,
     makeStyles,
+    Tooltip,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
@@ -29,7 +31,7 @@ import Logo from "../../../assets/Bantrab.jpg";
 
 const useStyles = makeStyles({
     drawerPaper: {
-        width: "20%",
+        width: "18%",
         zIndex: "1",
     },
 });
@@ -68,6 +70,9 @@ export default function AsideHome(props) {
                         <ContactsRounded />
                     </ListItemIcon>
                     <ListItemText primary="Cuenta" />
+                    <Tooltip title="Editar información de cuenta y empresa">
+                        <HelpOutlineOutlined fontSize="small" />
+                    </Tooltip>
                 </ListItem>
                 <Collapse in={account} timeout="auto" unmountOnExit>
                     <List>
@@ -105,6 +110,9 @@ export default function AsideHome(props) {
                             <GroupRounded />
                         </ListItemIcon>
                         <ListItemText primary="Equipos" />
+                        <Tooltip title="Información de grupos">
+                            <HelpOutlineOutlined fontSize="small" />
+                        </Tooltip>
                     </ListItem>
                 </Link>
                 <Link to="/content">
@@ -113,6 +121,9 @@ export default function AsideHome(props) {
                             <TocRounded />
                         </ListItemIcon>
                         <ListItemText primary="Contenido" />
+                        <Tooltip title="Cursos disponibles">
+                            <HelpOutlineOutlined fontSize="small" />
+                        </Tooltip>
                     </ListItem>
                 </Link>
                 <Link to="/analytics">
@@ -121,6 +132,9 @@ export default function AsideHome(props) {
                             <AssessmentRounded />
                         </ListItemIcon>
                         <ListItemText primary="Analítica" />
+                        <Tooltip title="Panel de estadísticas">
+                            <HelpOutlineOutlined fontSize="small" />
+                        </Tooltip>
                     </ListItem>
                 </Link>
             </List>

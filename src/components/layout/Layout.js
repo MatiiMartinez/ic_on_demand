@@ -44,7 +44,7 @@ export default function Layout(props) {
 }
 
 const LayoutContainer = styled.div`
-    margin-left: ${(props) => (props.openAside ? "20%" : "0")};
+    margin-left: ${(props) => (props.openAside ? "18%" : "0")};
 `;
 
 const MainContainer = styled.div`
