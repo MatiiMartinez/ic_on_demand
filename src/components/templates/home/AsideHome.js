@@ -9,6 +9,7 @@ import {
     GroupRounded,
     HelpOutlineOutlined,
     LocationCityRounded,
+    PaymentRounded,
     SettingsRounded,
     SupervisorAccountRounded,
     TocRounded,
@@ -133,6 +134,17 @@ export default function AsideHome(props) {
                         </ListItemIcon>
                         <ListItemText primary="Analítica" />
                         <Tooltip title="Panel de estadísticas">
+                            <HelpOutlineOutlined fontSize="small" />
+                        </Tooltip>
+                    </ListItem>
+                </Link>
+                <Link to="/plans">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <PaymentRounded />
+                        </ListItemIcon>
+                        <ListItemText primary="Planes" />
+                        <Tooltip title="Panel de planes">
                             <HelpOutlineOutlined fontSize="small" />
                         </Tooltip>
                     </ListItem>

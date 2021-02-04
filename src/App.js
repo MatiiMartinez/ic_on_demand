@@ -15,6 +15,7 @@ import Teams from "./pages/Teams";
 import Content from "./pages/Content";
 import Analytics from "./pages/Analytics";
 import Team from "./components/templates/home/Team";
+import Plans from "./pages/Plans";
 
 function App() {
     return (
@@ -43,6 +44,7 @@ function App() {
                                     path="/analytics"
                                     component={Analytics}
                                 />
+                                <Route exact path="/plans" component={Plans} />
                                 {/** COMPONENT ROUTES */}
                                 <Route
                                     exact
