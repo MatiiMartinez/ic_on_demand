@@ -10,9 +10,7 @@ import TitleInfo from "../../atoms/TitleInfo";
 import { personMock } from "../../../../mocks/personMock";
 import { groupMock } from "../../../../mocks/groupMock";
 
-const LeftCart = (props) => {
-    const { items } = props;
-
+const LeftCart = () => {
     const [typeCheck, setTypeCheck] = useState(true);
     const [personValue, setPersonValue] = useState(null);
     const [persons, setPersons] = useState([]);

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { makeStyles, Popover } from "@material-ui/core";
-import Button from "../../atoms/Button";
+import { Button, makeStyles, Popover } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
     popover: {

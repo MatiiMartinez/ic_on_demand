@@ -1,8 +1,7 @@
-import { TextField } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 
-import AdenButton from "../components/common/AdenButton";
 import InputDisabled from "../components/common/InputDisabled";
 import TitleHeader from "../components/ui/atoms/TitleHeader";
 import ChangePassword from "../components/ui/molecules/ChangePassword";
@@ -25,7 +24,9 @@ export default function Admin() {
                     <InputDisabled id="lastname" label="Email" />
                 </InputContainer>
                 <ButtonContainer>
-                    <AdenButton>Actualizar</AdenButton>
+                    <Button variant="contained" color="primary">
+                        Actualizar
+                    </Button>
                 </ButtonContainer>
                 <ChangePassword />
             </DataContainer>

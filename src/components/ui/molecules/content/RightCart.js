@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import TitleInfo from "../../atoms/TitleInfo";
 import { contentMock } from "../../../../mocks/contentMock";
-import { Divider, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import { DeleteOutlineOutlined } from "@material-ui/icons";
 
 const RightCart = () => {

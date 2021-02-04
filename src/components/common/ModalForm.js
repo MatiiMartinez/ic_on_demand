@@ -44,6 +44,7 @@ const ModalContainer = styled.div`
     outline: none;
     border: none;
     background-color: #ffffff;
+    min-width: 500px;
 `;
 
 const Header = styled.div`

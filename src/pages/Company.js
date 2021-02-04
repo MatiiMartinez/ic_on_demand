@@ -4,9 +4,9 @@ import styled from "styled-components";
 import Logo from "../assets/Bantrab.jpg";
 
 import InputDisabled from "../components/common/InputDisabled";
-import AdenButton from "../components/common/AdenButton";
 import FormCountries from "../components/ui/molecules/FormCountries";
 import TitleHeader from "../components/ui/atoms/TitleHeader";
+import { Button } from "@material-ui/core";
 
 export default function Company() {
     return (
@@ -20,12 +20,16 @@ export default function Company() {
                     <InputDisabled id="razon_social" label="Razón Social" />
                     <FormCountries label="País" />
                     <ButtonContainer>
-                        <AdenButton>Aceptar</AdenButton>
+                        <Button variant="contained" color="primary">
+                            Aceptar
+                        </Button>
                     </ButtonContainer>
                 </InputContainer>
                 <LogoContainer>
                     <CompanyLogo src={Logo} alt="company" />
-                    <AdenButton>Subir Imagen</AdenButton>
+                    <Button variant="contained" color="primary">
+                        Subir Imagen
+                    </Button>
                 </LogoContainer>
             </DataContainer>
         </div>
