@@ -8,10 +8,10 @@ import TableTeams from "../components/ui/organisms/teams/TableTeams";
 export default function Teams() {
     return (
         <TeamsContainer>
-            <HeaderContainer>
+            <HeaderWrapper>
                 <TitleInfo label="Equipos" />
                 <NewTeam />
-            </HeaderContainer>
+            </HeaderWrapper>
             <TableTeams />
         </TeamsContainer>
     );
@@ -23,7 +23,7 @@ const TeamsContainer = styled.div`
     row-gap: 2rem;
 `;
 
-const HeaderContainer = styled.div`
+const HeaderWrapper = styled.div`
     display: flex;
     align-items: center;
     column-gap: 1rem;

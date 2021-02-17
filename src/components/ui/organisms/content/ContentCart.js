@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { Badge, Collapse, IconButton } from "@material-ui/core";
+import { Badge, Drawer, IconButton } from "@material-ui/core";
 import { ShoppingCartRounded } from "@material-ui/icons";
 import LeftCart from "../../molecules/content/LeftCart";
 import RightCart from "../../molecules/content/RightCart";
@@ -9,18 +9,18 @@ import RightCart from "../../molecules/content/RightCart";
 const ContentCart = () => {
     const [cartOpen, setCartOpen] = useState(false);
 
-    function handleSetCartOpen() {
+    function toggleCartOpen() {
         setCartOpen(!cartOpen);
     }
 
     return (
         <ContentCartContainer>
-            <CartIcon onClick={handleSetCartOpen}>
+            <CartIcon onClick={toggleCartOpen}>
                 <Badge color="primary" badgeContent={3}>
-                    <ShoppingCartRounded />
+                    <ShoppingCartRounded color="primary" />
                 </Badge>
             </CartIcon>
-            <Collapse in={cartOpen} timeout="auto" unmountOnExit>
+            <Drawer open={cartOpen} onClose={toggleCartOpen} anchor="bottom">
                 <CartContainer>
                     <Column>
                         <LeftCart />
@@ -29,7 +29,7 @@ const ContentCart = () => {
                         <RightCart />
                     </Column>
                 </CartContainer>
-            </Collapse>
+            </Drawer>
         </ContentCartContainer>
     );
 };
@@ -47,9 +47,9 @@ const ContentCartContainer = styled.div`
 `;
 
 const CartIcon = styled(IconButton)`
-    position: absolute !important;
-    right: 1rem !important;
-    top: -4rem !important;
+    position: absolute;
+    right: 1rem;
+    top: -4rem;
 `;
 
 const CartContainer = styled.div`

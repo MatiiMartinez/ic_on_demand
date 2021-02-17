@@ -53,7 +53,7 @@ const LeftCart = () => {
 
     return (
         <>
-            <TitleInfo label="Payment Information" group />
+            <TitleInfo label="Información de Usuario" />
             <OptionsContainer>
                 {/** User type */}
                 <Subtitle>Tipo Usuario</Subtitle>

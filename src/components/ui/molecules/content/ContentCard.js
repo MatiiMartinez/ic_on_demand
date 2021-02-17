@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
         pointerEvents: "none",
     },
     paper: {
-        boxShadow: "none",
+        boxShadow: "0 2px 4px #00000020",
         border: "1px solid #dcdacb",
         padding: "1rem",
         maxWidth: "300px",

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { TextField } from "@material-ui/core";
-import ButtonAsLink from "../../common/ButtonAsLink";
+import { Button, TextField } from "@material-ui/core";
 import ModalForm from "../../common/ModalForm";
 
 export default function ChangePassword() {
@@ -18,11 +17,13 @@ export default function ChangePassword() {
 
     return (
         <PasswordContainer>
-            <ButtonAsLink onClick={handleOpen}>Cambiar Contraseña</ButtonAsLink>
-            <span>
+            <Button variant="outlined" color="primary" onClick={handleOpen}>
+                Cambiar Contraseña
+            </Button>
+            <Text>
                 Te recomendamos que elijas una contraseña única que no uses para
                 conectarte a otras cuentas.
-            </span>
+            </Text>
             <ModalForm
                 isOpen={isOpen}
                 handleClose={handleClose}
@@ -58,19 +59,14 @@ export default function ChangePassword() {
 
 const PasswordContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
-    width: 60%;
+    row-gap: 1rem;
+`;
 
-    button {
-        font-size: 1rem;
-    }
-
-    span {
-        margin-top: 0.5rem;
-        font-size: 1rem;
-        font-weight: 300;
-    }
+const Text = styled.span`
+    font-size: 1rem;
+    font-weight: 300;
 `;
 
 const Body = styled.div`

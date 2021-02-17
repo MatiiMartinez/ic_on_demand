@@ -66,45 +66,17 @@ export default function AsideHome(props) {
             </DrawerHeader>
             <Divider />
             <List>
-                <ListItem button open={account} onClick={handleSetAccount}>
-                    <ListItemIcon>
-                        <ContactsRounded />
-                    </ListItemIcon>
-                    <ListItemText primary="Cuenta" />
-                    <Tooltip title="Editar información de cuenta y empresa">
-                        <HelpOutlineOutlined fontSize="small" />
-                    </Tooltip>
-                </ListItem>
-                <Collapse in={account} timeout="auto" unmountOnExit>
-                    <List>
-                        <Link to="/company">
-                            <ListItem
-                                button
-                                style={{
-                                    paddingLeft: "3rem",
-                                }}
-                            >
-                                <ListItemIcon>
-                                    <LocationCityRounded />
-                                </ListItemIcon>
-                                <ListItemText primary="Empresa" />
-                            </ListItem>
-                        </Link>
-                        <Link to="/admin">
-                            <ListItem
-                                button
-                                style={{
-                                    paddingLeft: "3rem",
-                                }}
-                            >
-                                <ListItemIcon>
-                                    <SupervisorAccountRounded />
-                                </ListItemIcon>
-                                <ListItemText primary="Administrador" />
-                            </ListItem>
-                        </Link>
-                    </List>
-                </Collapse>
+                <Link to="/account">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <ContactsRounded />
+                        </ListItemIcon>
+                        <ListItemText primary="Cuenta" />
+                        <Tooltip title="Editar información de cuenta y empresa">
+                            <HelpOutlineOutlined fontSize="small" />
+                        </Tooltip>
+                    </ListItem>
+                </Link>
                 <Link to="/teams">
                     <ListItem button>
                         <ListItemIcon>

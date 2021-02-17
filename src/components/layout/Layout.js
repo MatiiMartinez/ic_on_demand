@@ -7,6 +7,7 @@ import { MenuRounded } from "@material-ui/icons";
 // COMPONENTS
 import AsideHome from "../templates/home/AsideHome";
 import BreadCrumbs from "../../utils/BreadCrumbs";
+import Navegation from "./navegation/Navegation";
 
 export default function Layout(props) {
     const [openAside, setOpenAside] = useState(true);
@@ -17,6 +18,7 @@ export default function Layout(props) {
 
     return (
         <>
+            <Navegation />
             <AsideHome
                 openAside={openAside}
                 handleToggleAside={handleToggleAside}

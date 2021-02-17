@@ -3,23 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            main: "#b6241d",
-        },
-    },
-});
-
 ReactDOM.render(
     <Provider store={store}>
-        <ThemeProvider theme={theme}>
-            <App />
-        </ThemeProvider>
+        <App />
     </Provider>,
     document.getElementById("root")
 );
