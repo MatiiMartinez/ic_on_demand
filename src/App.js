@@ -10,7 +10,7 @@ import Layout from "./components/layout/Layout";
 import Teams from "./pages/Teams";
 import Content from "./pages/Content";
 import Analytics from "./pages/Analytics";
-import Team from "./components/templates/home/Team";
+import Team from "./pages/Team";
 import Plans from "./pages/Plans";
 import Account from "./pages/Account";
 

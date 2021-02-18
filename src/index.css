@@ -10,8 +10,9 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
-  border-radius: 0.25rem !important;
+  border-radius: 0.25rem;
   text-transform: none !important;
+  background-color: transparent;
 }
 
 a {

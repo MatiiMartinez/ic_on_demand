@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <HeaderContainer>
       <Title>Marketing</Title>
+      {props.children}
     </HeaderContainer>
   );
 };
@@ -12,6 +13,9 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fbfbfb;
   padding: 2rem;
 `;

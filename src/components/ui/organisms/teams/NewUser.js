@@ -5,50 +5,53 @@ import ModalForm from "../../../common/ModalForm";
 import styled from "styled-components";
 
 export default function NewUser() {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    function handleOpen() {
-        setIsOpen(true);
-    }
+  function handleOpen() {
+    setIsOpen(true);
+  }
 
-    function handleClose() {
-        setIsOpen(false);
-    }
+  function handleClose() {
+    setIsOpen(false);
+  }
 
-    return (
-        <>
-            <Button
-                variant="outlined"
-                color="secondary"
-                size="small"
-                onClick={handleOpen}
-            >
-                NUEVO USUARIO
-            </Button>
-            <ModalForm
-                isOpen={isOpen}
-                handleClose={handleClose}
-                title="Crear usuario"
-            >
-                <NewUserContainer>
-                    <TextField
-                        label="Correo electrónico"
-                        size="small"
-                        variant="outlined"
-                        color="primary"
-                        type="email"
-                    />
-                    <Button variant="contained" color="secondary" size="medium">
-                        Verificar
-                    </Button>
-                </NewUserContainer>
-            </ModalForm>
-        </>
-    );
+  return (
+    <>
+      <NewUserButton onClick={handleOpen}>Nuevo Usuario</NewUserButton>
+      <ModalForm
+        isOpen={isOpen}
+        handleClose={handleClose}
+        title="Crear usuario"
+      >
+        <NewUserContainer>
+          <TextField
+            label="Correo electrónico"
+            size="small"
+            variant="outlined"
+            color="primary"
+            type="email"
+          />
+          <Button variant="contained" color="secondary" size="medium">
+            Verificar
+          </Button>
+        </NewUserContainer>
+      </ModalForm>
+    </>
+  );
 }
 
 const NewUserContainer = styled.div`
-    display: flex;
-    align-items: center;
-    column-gap: 1rem;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+`;
+
+const NewUserButton = styled.button`
+  color: #ababab;
+  border: 1px solid #ababab;
+  padding: 0.5rem 1rem;
+
+  :hover {
+    background-color: #f3f6f9;
+  }
 `;
