@@ -7,10 +7,10 @@ import { theme } from "./assets/theme/MaterialTheme";
 // PAGES
 import Login from "./pages/Login";
 import Layout from "./components/layout/Layout";
-import Teams from "./pages/Teams";
+import Groups from "./pages/Groups";
 import Content from "./pages/Content";
 import Analytics from "./pages/Analytics";
-import Team from "./pages/Team";
+import Group from "./pages/Group";
 import Plans from "./pages/Plans";
 import Account from "./pages/Account";
 
@@ -24,12 +24,12 @@ function App() {
             <Layout>
               {/** MAIN ROUTES */}
               <Route exact path="/account" component={Account} />
-              <Route exact path="/teams" component={Teams} />
+              <Route exact path="/groups" component={Groups} />
               <Route exact path="/content" component={Content} />
               <Route exact path="/analytics" component={Analytics} />
               <Route exact path="/plans" component={Plans} />
               {/** COMPONENT ROUTES */}
-              <Route exact path="/teams/:id" component={Team} />
+              <Route exact path="/teams/:id" component={Group} />
             </Layout>
           </Switch>
         </BrowserRouter>

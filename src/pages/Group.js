@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 import LayoutPage from "../components/layout/LayoutPage";
-import Header from "../components/ui/organisms/teams/Header";
-import NewUser from "../components/ui/organisms/teams/NewUser";
-import TableTeam from "../components/ui/organisms/teams/TableTeam";
+import Options from "../components/ui/organisms/group/Options";
+import Header from "../components/ui/organisms/group/Header";
+import NewUser from "../components/ui/organisms/group/NewUser";
+import TableTeam from "../components/ui/organisms/group/TableTeam";
 
-export default function Team() {
+const Group = () => {
   return (
     <LayoutPage
       header={
@@ -16,13 +17,19 @@ export default function Team() {
       }
     >
       <TeamContainer>
+        <Options />
         <TableTeam />
       </TeamContainer>
     </LayoutPage>
   );
-}
+};
+
+export default Group;
 
 const TeamContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
   padding: 1rem;
   background-color: #ffffff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;

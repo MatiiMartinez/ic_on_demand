@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Apps, Assessment, Payment } from "@material-ui/icons";
+import { Apps, Assessment, Group, Payment } from "@material-ui/icons";
 import { Avatar } from "@material-ui/core";
 
 import MenuLink from "./components/MenuLink";
@@ -14,25 +14,26 @@ const Aside = () => {
         <MenuLink to="/analytics" label="Reportes" icon={<Assessment />} />
         <MenuLink to="/plans" label="Planes" icon={<Payment />} />
         <MenuLink to="/content" label="Contenido" icon={<Apps />} />
+        <MenuLink to="/groups" label="Grupos" icon={<Group />} />
       </MenuList>
       <MenuList title="Grupos">
         <MenuLink
-          to="/teams"
+          to="/teams/Marketing"
           label="Marketing"
           icon={<Avatar variant="rounded">M</Avatar>}
         />
         <MenuLink
-          to="/teams"
+          to="/teams/Marketing"
           label="Diseño"
           icon={<Avatar variant="rounded">D</Avatar>}
         />
         <MenuLink
-          to="/teams"
+          to="/teams/Marketing"
           label="Gestión Comercial"
           icon={<Avatar variant="rounded">G</Avatar>}
         />
         <MenuLink
-          to="/teams"
+          to="/teams/Marketing"
           label="Logística"
           icon={<Avatar variant="rounded">L</Avatar>}
         />
@@ -54,4 +55,5 @@ const AsideContainer = styled.aside`
   height: 100%;
   margin-top: 60px;
   width: 250px;
+  z-index: 1;
 `;

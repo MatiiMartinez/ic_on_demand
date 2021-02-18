@@ -18,6 +18,7 @@ const UserMenu = () => {
 
   return (
     <UserMenuContainer>
+      <Username>Administrador</Username>
       <IconButton onClick={toggleOpen}>
         <AccountCircle fontSize="large" htmlColor="#ababab" />
       </IconButton>
@@ -38,6 +39,16 @@ export default UserMenu;
 
 const UserMenuContainer = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+`;
+
+const Username = styled.h2`
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ababab;
 `;
 
 const Menu = styled.div`

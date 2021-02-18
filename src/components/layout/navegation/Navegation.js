@@ -27,7 +27,7 @@ const NavegationContainer = styled.header`
   left: 0;
   right: 0;
   padding: 0 1rem;
-  z-index: 1;
+  z-index: 2;
 `;
 
 const FakeLogo = styled.img`
