@@ -41,10 +41,12 @@ const UserMenuContainer = styled.div`
 `;
 
 const Menu = styled.div`
-    display: ${(props) => (props.open ? "flex" : "none")};
+    display: flex;
+    visibility: ${(props) => (props.open ? "visible" : "hidden")};
     flex-direction: column;
     position: absolute;
     bottom: ${(props) => (props.open ? "-100px" : "100px")};
+    opacity: ${(props) => (props.open ? "1" : "0")};
     right: 0;
     background-color: #ffffff;
     z-index: 9999;

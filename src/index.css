@@ -1,39 +1,46 @@
 body {
-    margin: 0;
-    font-family: "Lato", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #f4f4f4;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.25rem !important;
-    text-transform: none !important;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem !important;
+  text-transform: none !important;
 }
 
 a {
-    text-decoration: none;
-    color: #000000;
+  text-decoration: none;
+  color: #000000;
 }
 
 .bg-login {
-    background-image: url("./assets/bg-landing.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("./assets/bg-landing.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container-analytics {
-    padding: 3rem 6rem;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px #00000020;
-    border-radius: 5px;
+  padding: 3rem 6rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px #00000020;
+  border-radius: 5px;
+}
+
+h1,
+h2,
+p,
+span {
+  margin: 0;
 }
