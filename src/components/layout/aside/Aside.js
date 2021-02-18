@@ -49,4 +49,9 @@ const AsideContainer = styled.aside`
   row-gap: 1rem;
   padding: 1rem;
   background-color: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: fixed;
+  height: 100%;
+  margin-top: 60px;
+  width: 250px;
 `;

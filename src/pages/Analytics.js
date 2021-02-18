@@ -1,30 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 
+import LayoutPage from "../components/layout/LayoutPage";
+import Header from "../components/ui/organisms/analytics/Header";
 import AnalyticFour from "../mocks/analytics/AnalyticFour";
 import AnalyticOne from "../mocks/analytics/AnalyticOne";
 import AnalyticThree from "../mocks/analytics/AnalyticThree";
 import AnalyticTwo from "../mocks/analytics/AnalyticTwo";
-import TitleHeader from "../components/ui/atoms/TitleHeader";
 
 const Analytics = () => {
-    return (
-        <div>
-            <TitleHeader title="Analítica" subtitle="Analytics" />
-            <GridAnalytics>
-                <AnalyticTwo />
-                <AnalyticThree />
-                <AnalyticOne />
-                <AnalyticFour />
-            </GridAnalytics>
-        </div>
-    );
+  return (
+    <LayoutPage header={<Header />}>
+      <GridAnalytics>
+        <AnalyticTwo />
+        <AnalyticThree />
+        <AnalyticOne />
+        <AnalyticFour />
+      </GridAnalytics>
+    </LayoutPage>
+  );
 };
 
-const GridAnalytics = styled.div`
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 2rem;
-`;
-
 export default Analytics;
+
+const GridAnalytics = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+`;

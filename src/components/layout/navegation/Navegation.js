@@ -15,15 +15,19 @@ const Navegation = () => {
 
 export default Navegation;
 
-const NavegationContainer = styled.div`
+const NavegationContainer = styled.header`
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
   height: 60px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 1rem;
+  z-index: 1;
 `;
 
 const FakeLogo = styled.img`

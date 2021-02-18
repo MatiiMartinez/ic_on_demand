@@ -36,4 +36,6 @@ const FakeMenuLink = styled(Link)`
   }
 `;
 
-const Label = styled.span``;
+const Label = styled.span`
+  font-size: 0.9rem;
+`;
