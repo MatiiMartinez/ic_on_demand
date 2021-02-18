@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { contentMock } from "../mocks/contentMock";
@@ -8,12 +8,6 @@ import LayoutPage from "../components/layout/LayoutPage";
 import Header from "../components/ui/organisms/content/Header";
 
 export default function Content() {
-  const [menu, setMenu] = useState("");
-
-  function handleSetMenu(menu) {
-    setMenu(menu);
-  }
-
   return (
     <LayoutPage header={<Header />}>
       <Grid>
