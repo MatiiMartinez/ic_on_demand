@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Header = () => {
     return (
         <HeaderContainer>
-            <Title>Licencias</Title>
+            <Title>Usuarios</Title>
         </HeaderContainer>
     );
 };

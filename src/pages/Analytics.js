@@ -10,28 +10,28 @@ import AnalyticThree from "../mocks/analytics/AnalyticThree";
 import AnalyticTwo from "../mocks/analytics/AnalyticTwo";
 
 const Analytics = () => {
-  return (
-    <LayoutPage
-      header={
-        <Header>
-          <Filters />
-        </Header>
-      }
-    >
-      <GridAnalytics>
-        <AnalyticTwo />
-        <AnalyticThree />
-        <AnalyticOne />
-        <AnalyticFour />
-      </GridAnalytics>
-    </LayoutPage>
-  );
+    return (
+        <LayoutPage
+            header={
+                <Header>
+                    <Filters />
+                </Header>
+            }
+        >
+            <GridAnalytics>
+                <AnalyticTwo />
+                <AnalyticThree />
+                <AnalyticOne />
+                <AnalyticFour />
+            </GridAnalytics>
+        </LayoutPage>
+    );
 };
 
 export default Analytics;
 
 const GridAnalytics = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
 `;

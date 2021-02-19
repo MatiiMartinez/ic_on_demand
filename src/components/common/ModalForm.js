@@ -18,18 +18,10 @@ export default function ModalForm(props) {
                 </Header>
                 <Body>
                     {props.children}
-                    <ButtonContainer>
-                        <Button
-                            variant="outlined"
-                            color="primary"
-                            onClick={handleClose}
-                        >
-                            Cancelar
-                        </Button>
-                        <Button variant="contained" color="primary">
-                            Finalizar
-                        </Button>
-                    </ButtonContainer>
+
+                    <FakeButton variant="contained" color="primary">
+                        Finalizar
+                    </FakeButton>
                 </Body>
             </ModalContainer>
         </Modal>
@@ -44,14 +36,15 @@ const ModalContainer = styled.div`
     outline: none;
     border: none;
     background-color: #ffffff;
-    min-width: 500px;
+    min-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
 const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #eff0f3;
+    background-color: #f3f6f9;
     padding: 0.5rem 1rem;
 `;
 
@@ -62,11 +55,10 @@ const Title = styled.h1`
 `;
 
 const Body = styled.div`
-    padding: 1.5rem;
+    padding: 2rem;
 `;
 
-const ButtonContainer = styled.div`
-    display: flex;
-    column-gap: 1rem;
-    margin-top: 1.5rem;
+const FakeButton = styled(Button)`
+    margin-top: 2rem;
+    width: 100%;
 `;

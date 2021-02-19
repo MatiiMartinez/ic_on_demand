@@ -69,7 +69,8 @@ const FakeFormControl = styled(FormControl)`
 
     div:before,
     div:after,
-    div:hover {
+    div:hover,
+    div:focus {
         border-bottom: none !important;
         background-color: transparent;
     }

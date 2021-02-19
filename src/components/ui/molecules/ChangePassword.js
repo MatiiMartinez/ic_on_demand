@@ -30,21 +30,21 @@ export default function ChangePassword() {
                 title="Cambiar contraseña"
             >
                 <Body>
-                    <TextField
+                    <FakeTextField
                         label="Contraseña actual"
                         size="small"
                         variant="outlined"
                         color="secondary"
                         type="password"
                     />
-                    <TextField
+                    <FakeTextField
                         label="Contraseña nueva"
                         size="small"
                         variant="outlined"
                         color="secondary"
                         type="password"
                     />
-                    <TextField
+                    <FakeTextField
                         label="Repetir contraseña nueva"
                         size="small"
                         variant="outlined"
@@ -72,6 +72,9 @@ const Text = styled.span`
 const Body = styled.div`
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
-    padding: 1rem 20%;
+    row-gap: 1rem;
+`;
+
+const FakeTextField = styled(TextField)`
+    width: 100%;
 `;

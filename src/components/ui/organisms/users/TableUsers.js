@@ -16,12 +16,13 @@ import styled from "styled-components";
 import { MoreVertRounded } from "@material-ui/icons";
 
 const columns = [
+    { label: "NOMBRE" },
     { label: "CORREO ELECTRÓNICO" },
     { label: "REGISTRO" },
     { label: "ESTADO" },
 ];
 
-const TableTeam = () => {
+const TableUsers = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
@@ -57,6 +58,7 @@ const TableTeam = () => {
                 <TableBody>
                     {teamMock[0].team.map((team, index) => (
                         <TableRowStyle key={index}>
+                            <TableCell>{team.name}</TableCell>
                             <TableCell>{team.email}</TableCell>
                             <TableCell>{team.register}</TableCell>
                             <TableCell>
@@ -101,7 +103,7 @@ const TableTeam = () => {
     );
 };
 
-export default TableTeam;
+export default TableUsers;
 
 const TableRowStyle = styled(TableRow)`
     background-color: #ffffff;
