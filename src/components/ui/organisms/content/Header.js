@@ -37,8 +37,7 @@ const HeaderContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #fbfbfb;
-    padding: 2rem;
-    position: relative;
+    height: 100px;
 `;
 
 const SearchWrapper = styled.div`

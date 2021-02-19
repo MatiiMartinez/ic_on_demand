@@ -2,21 +2,25 @@ import React from "react";
 import styled from "styled-components";
 
 const Header = () => {
-  return (
-    <HeaderContainer>
-      <Title>Planes</Title>
-    </HeaderContainer>
-  );
+    return (
+        <HeaderContainer>
+            <Title>Planes</Title>
+        </HeaderContainer>
+    );
 };
 
 export default Header;
 
 const HeaderContainer = styled.div`
-  background-color: #fbfbfb;
-  padding: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: #fbfbfb;
+    height: 100px;
 `;
+
 const Title = styled.h1`
-  font-size: 1rem;
-  font-weight: 700;
-  color: #ababab;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ababab;
 `;
