@@ -16,9 +16,9 @@ import styled from "styled-components";
 import { MoreVertRounded } from "@material-ui/icons";
 
 const columns = [
-  { label: "Correo electrónico" },
-  { label: "Registro" },
-  { label: "Estado" },
+  { label: "CORREO ELECTRÓNICO" },
+  { label: "REGISTRO" },
+  { label: "ESTADO" },
 ];
 
 export default function TableTeam() {
@@ -40,11 +40,13 @@ export default function TableTeam() {
         <TableHead>
           <TableRow>
             {columns.map((column, index) => (
-              <TableCell key={index} align="left">
+              <TableCell key={index} align="left" style={{ fontWeight: "700" }}>
                 {column.label}
               </TableCell>
             ))}
-            <TableCell align="right">Opciones</TableCell>
+            <TableCell align="right" style={{ fontWeight: "700" }}>
+              OPCIONES
+            </TableCell>
           </TableRow>
         </TableHead>
         {/** Body */}

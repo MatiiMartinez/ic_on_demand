@@ -15,9 +15,9 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
 const columns = [
-  { label: "Nombre" },
-  { label: "Personas" },
-  { label: "Última actualización" },
+  { label: "NOMBRE" },
+  { label: "USUARIOS" },
+  { label: "ÚLTIMA ACTUALIZACIÓN" },
 ];
 
 export default function TableTeams() {
@@ -30,7 +30,7 @@ export default function TableTeams() {
         <TableHead>
           <TableRow>
             {columns.map((column, index) => (
-              <TableCell key={index} align="left">
+              <TableCell key={index} align="left" style={{ fontWeight: "700" }}>
                 {column.label}
               </TableCell>
             ))}

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Header = (props) => {
   return (
     <HeaderContainer>
-      <Title>Marketing</Title>
+      <Title>Grupos</Title>
       {props.children}
     </HeaderContainer>
   );

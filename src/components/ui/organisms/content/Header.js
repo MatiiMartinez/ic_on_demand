@@ -1,58 +1,77 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-import { ExpandMore } from "@material-ui/icons";
-import MenuContent from "./MenuContent";
+import { Search } from "@material-ui/icons";
+import { Divider, FormControl, MenuItem, Select } from "@material-ui/core";
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
-
-  function toggleOpen() {
-    setOpen(!open);
-  }
-
-  function handleClose() {
-    setOpen(false);
-  }
-
-  return (
-    <HeaderContainer>
-      <MenuButton onClick={toggleOpen}>
-        <MenuText>Contenido</MenuText>
-        <ExpandMore fontSize="small" />
-      </MenuButton>
-      <MenuContent open={open} handleClose={handleClose} />
-    </HeaderContainer>
-  );
+    return (
+        <HeaderContainer>
+            <SearchWrapper>
+                <Search htmlColor="#ababab" />
+                <InputSearch type="search" placeholder="Buscar" />
+                <FakeDivider orientation="vertical" flexItem="true" />
+                <FakeFormControl>
+                    <Select
+                        displayEmpty
+                        inputProps={{ "aria-label": "Without label" }}
+                        style={{ border: "none !important" }}
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Liderazgo y Desarrollo</MenuItem>
+                        <MenuItem value={20}>Desarrollo Gerencial</MenuItem>
+                        <MenuItem value={30}>Finanzas</MenuItem>
+                    </Select>
+                </FakeFormControl>
+            </SearchWrapper>
+        </HeaderContainer>
+    );
 };
 
 export default Header;
 
 const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fbfbfb;
-  padding: 2rem;
-  position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbfbfb;
+    padding: 2rem;
+    position: relative;
 `;
 
-const MenuButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  width: max-content;
-  cursor: pointer;
-
-  :hover {
-    background-color: #f3f6f9;
-  }
+const SearchWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
-const MenuText = styled.span`
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
+const InputSearch = styled.input`
+    border: none;
+    outline: none;
+    min-width: 300px;
+
+    ::placeholder {
+        color: #ababab;
+    }
+`;
+
+const FakeDivider = styled(Divider)`
+    width: 2px;
+    border-radius: 5px;
+`;
+
+const FakeFormControl = styled(FormControl)`
+    min-width: 200px;
+
+    div:before,
+    div:after,
+    div:hover {
+        border-bottom: none !important;
+        background-color: transparent;
+    }
 `;

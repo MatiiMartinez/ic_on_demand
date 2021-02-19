@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import LayoutPage from "../components/layout/LayoutPage";
+import Filters from "../components/ui/organisms/analytics/Filters";
 import Header from "../components/ui/organisms/analytics/Header";
 import AnalyticFour from "../mocks/analytics/AnalyticFour";
 import AnalyticOne from "../mocks/analytics/AnalyticOne";
@@ -10,7 +11,13 @@ import AnalyticTwo from "../mocks/analytics/AnalyticTwo";
 
 const Analytics = () => {
   return (
-    <LayoutPage header={<Header />}>
+    <LayoutPage
+      header={
+        <Header>
+          <Filters />
+        </Header>
+      }
+    >
       <GridAnalytics>
         <AnalyticTwo />
         <AnalyticThree />

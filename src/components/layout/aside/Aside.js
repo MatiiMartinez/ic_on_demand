@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import { Apps, Assessment, Group, Payment } from "@material-ui/icons";
-import { Avatar } from "@material-ui/core";
 
 import MenuLink from "./components/MenuLink";
 import MenuList from "./components/MenuList";
+import MenuListGroups from "./components/MenuListGroups";
 
 const Aside = () => {
   return (
@@ -16,28 +16,7 @@ const Aside = () => {
         <MenuLink to="/content" label="Contenido" icon={<Apps />} />
         <MenuLink to="/groups" label="Grupos" icon={<Group />} />
       </MenuList>
-      <MenuList title="Grupos">
-        <MenuLink
-          to="/teams/Marketing"
-          label="Marketing"
-          icon={<Avatar variant="rounded">M</Avatar>}
-        />
-        <MenuLink
-          to="/teams/Marketing"
-          label="Diseño"
-          icon={<Avatar variant="rounded">D</Avatar>}
-        />
-        <MenuLink
-          to="/teams/Marketing"
-          label="Gestión Comercial"
-          icon={<Avatar variant="rounded">G</Avatar>}
-        />
-        <MenuLink
-          to="/teams/Marketing"
-          label="Logística"
-          icon={<Avatar variant="rounded">L</Avatar>}
-        />
-      </MenuList>
+      <MenuListGroups />
     </AsideContainer>
   );
 };
