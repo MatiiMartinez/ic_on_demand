@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-import AsideLogin from "../components/templates/login/AsideLogin";
+import AsideLogin from "../components/login/AsideLogin";
 
 export default function Login() {
     return (

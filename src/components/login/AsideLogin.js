@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Logo from "../../../assets/aden-logo-white.png";
-import LoginForm from "../../ui/molecules/LoginForm";
+import Logo from "../../assets/aden-logo-white.png";
+import LoginForm from "./LoginForm";
 
 export default function AsideLogin() {
     return (

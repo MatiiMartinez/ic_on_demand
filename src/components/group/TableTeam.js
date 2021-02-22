@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
 import {
     IconButton,
     Menu,
@@ -10,9 +12,7 @@ import {
     TableHead,
     TableRow,
 } from "@material-ui/core";
-
-import { teamMock } from "../../../../mocks/teamMock";
-import styled from "styled-components";
+import { teamMock } from "../../mocks/teamMock";
 import { MoreVertRounded } from "@material-ui/icons";
 
 const columns = [

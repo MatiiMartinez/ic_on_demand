@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const Header = (props) => {
+const SimpleHeader = (props) => {
+    const { title } = props;
+
     return (
         <HeaderContainer>
-            <Title>Marketing</Title>
+            <Title>{title}</Title>
             {props.children}
         </HeaderContainer>
     );
 };
 
-export default Header;
+export default SimpleHeader;
 
 const HeaderContainer = styled.div`
     display: flex;
@@ -20,6 +22,7 @@ const HeaderContainer = styled.div`
     background-color: #fbfbfb;
     height: 100px;
 `;
+
 const Title = styled.h1`
     font-size: 1rem;
     font-weight: 700;

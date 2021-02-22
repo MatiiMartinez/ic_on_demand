@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import LayoutPage from "../components/layout/LayoutPage";
-import Filters from "../components/ui/organisms/analytics/Filters";
-import Header from "../components/ui/organisms/analytics/Header";
+import Filters from "../components/analytics/Filters";
+import Header from "../components/analytics/Header";
 import AnalyticFour from "../mocks/analytics/AnalyticFour";
 import AnalyticOne from "../mocks/analytics/AnalyticOne";
 import AnalyticThree from "../mocks/analytics/AnalyticThree";

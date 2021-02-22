@@ -1,6 +1,7 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
+
+import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
 
 const Filters = () => {
     return (

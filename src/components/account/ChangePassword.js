@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Button, TextField } from "@material-ui/core";
-import ModalForm from "../../common/ModalForm";
+import ModalForm from "../common/ModalForm";
 
 export default function ChangePassword() {
     const [isOpen, setIsOpen] = useState(false);

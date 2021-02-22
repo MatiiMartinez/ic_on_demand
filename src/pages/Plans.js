@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import SimpleHeader from "../components/common/SimpleHeader";
 import LayoutPage from "../components/layout/LayoutPage";
 
-import PlanCard from "../components/ui/molecules/plans/PlanCard";
-import Header from "../components/ui/organisms/plans/Header";
+import PlanCard from "../components/plans/PlanCard";
 
 const Plans = () => {
     return (
-        <LayoutPage header={<Header />}>
+        <LayoutPage header={<SimpleHeader title="Licencias" />}>
             <PlansContainer>
-                <PlanCard />
                 <PlanCard />
             </PlansContainer>
         </LayoutPage>

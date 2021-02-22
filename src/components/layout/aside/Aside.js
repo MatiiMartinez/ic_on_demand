@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Apps, Assessment, Group, Payment, Person } from "@material-ui/icons";
+import { Apps, Assessment, Group, Person } from "@material-ui/icons";
 
 import MenuLink from "./components/MenuLink";
 import MenuList from "./components/MenuList";
@@ -13,10 +13,9 @@ const Aside = () => {
             <MenuList title="General">
                 <MenuLink
                     to="/analytics"
-                    label="Reportes"
+                    label="Analíticas"
                     icon={<Assessment />}
                 />
-                <MenuLink to="/plans" label="Planes" icon={<Payment />} />
                 <MenuLink to="/content" label="Contenido" icon={<Apps />} />
                 <MenuLink to="/groups" label="Grupos" icon={<Group />} />
                 <MenuLink to="/users" label="Usuarios" icon={<Person />} />
