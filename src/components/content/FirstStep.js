@@ -1,15 +1,28 @@
-import { Button } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+
+import { Button } from "@material-ui/core";
 import UsersTable from "./UsersTable";
 
-const FirstStep = () => {
+const FirstStep = (props) => {
+    const { nextStep } = props;
+    const [fade, setFade] = useState(false);
+
+    useEffect(() => {
+        setFade(true);
+    }, []);
+
     return (
-        <FirstStepContainer>
+        <FirstStepContainer fade={fade}>
             <Title>Asignar Contenido</Title>
             <Text>Asigna el material necesario al personal de tu empresa</Text>
             <UsersTable />
-            <FakeButton variant="contained" color="secondary" size="small">
+            <FakeButton
+                variant="contained"
+                color="primary"
+                size="small"
+                onClick={nextStep}
+            >
                 Siguiente
             </FakeButton>
         </FirstStepContainer>
@@ -24,6 +37,8 @@ const FirstStepContainer = styled.div`
     align-items: center;
     row-gap: 0.5rem;
     color: #ababab;
+    opacity: ${(props) => (props.fade ? 1 : 0)};
+    transition: opacity 600ms ease;
 `;
 
 const Title = styled.h1`

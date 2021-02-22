@@ -17,6 +17,14 @@ const AssignContent = () => {
         setIsOpen(false);
     }
 
+    function nextStep() {
+        setSteps(false);
+    }
+
+    function backStep() {
+        setSteps(true);
+    }
+
     return (
         <>
             <Button
@@ -29,7 +37,11 @@ const AssignContent = () => {
             </Button>
             <Modal open={isOpen} onClose={handleClose} closeAfterTransition>
                 <ModalContainer>
-                    {steps ? <FirstStep /> : <SecondStep />}
+                    {steps ? (
+                        <FirstStep nextStep={nextStep} />
+                    ) : (
+                        <SecondStep backStep={backStep} />
+                    )}
                 </ModalContainer>
             </Modal>
         </>
@@ -49,5 +61,5 @@ const ModalContainer = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 2rem;
     width: 80%;
-    height: 90%;
+    height: max-content;
 `;
